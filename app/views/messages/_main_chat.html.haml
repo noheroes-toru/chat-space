@@ -6,7 +6,7 @@
         %ul.ChatHeader__memberList
           Member:
           %li.ChatHeader__member test
-    %a.ChatHeader__editButton{ :href => "#" } Edit
+    =link_to "Edit", "#", class: "ChatHeader__editButton"
 
 
   .MessageField
@@ -23,10 +23,10 @@
   .Footer
     %form.Form
       %input{name: "utf8", type: "hidden", value: "✓"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => "gDi16ueV9E8YIwOxdbI+w0E3rU1xDvLvTdrU4h/Hx5O1ohRye813SGjYCQ35ku94AgPs4+R04DI8bFzdmfVOfA=="}/
+      %input{name: "authenticity_token", type: "hidden", value: ""}/
       .Form__contents
-        %input.Form__inputContent{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-        %label.Form__inputImage{:for => "message_image"}
+        %input.Form__inputContent{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %label.Form__inputImage{for: "message_image"}
           = icon("fas", "images")
-          %input{:type => "file", :class => "Form__hidden"}/
-        %input.Form__submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+          %input{type: "file", class: "Form__hidden"}/
+        %input.Form__submit{ name: "commit", type: "submit", value: "Send"}/

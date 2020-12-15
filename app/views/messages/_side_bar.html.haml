@@ -4,14 +4,14 @@
       %h3.SideHeader__UserName test
       %ul.SideHeader__IconList
         %li.SideHeader__Icon
-          %a{:href => "#"}
+          = link_to "#" do
             = icon("far", "edit")
         %li.SideHeader__Icon
-          %a{:href => "#"}
+          = link_to "#" do
             = icon("fas", "cog")
 
   .GroupList
     .Group
-      %a{:href => "#"}
+      = link_to "#" do
         .Group__name test group
         .Group__message test message
