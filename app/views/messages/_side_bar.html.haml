@@ -1,0 +1,17 @@
+.Sidebar
+  .SideHeader
+    .SideHeader__List
+      %h3.SideHeader__UserName test
+      %ul.SideHeader__IconList
+        %li.SideHeader__Icon
+          %a{:href => "#"}
+            = icon("far", "edit")
+        %li.SideHeader__Icon
+          %a{:href => "#"}
+            = icon("fas", "cog")
+
+  .GroupList
+    .Group
+      %a{:href => "#"}
+        .Group__name test group
+        .Group__message test message
