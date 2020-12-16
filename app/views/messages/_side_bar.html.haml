@@ -1,0 +1,17 @@
+.Sidebar
+  .SideHeader
+    .SideHeader__List
+      %h3.SideHeader__UserName test
+      %ul.SideHeader__IconList
+        %li.SideHeader__Icon
+          = link_to "#" do
+            = icon("far", "edit")
+        %li.SideHeader__Icon
+          = link_to "#" do
+            = icon("fas", "cog")
+
+  .GroupList
+    .Group
+      = link_to "#" do
+        .Group__name test group
+        .Group__message test message

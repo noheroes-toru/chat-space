@@ -1,0 +1,32 @@
+.Chat
+  .ChatHeader
+    .ChatHeader__group
+      .ChatHeader__groupName
+        test group
+        %ul.ChatHeader__memberList
+          Member:
+          %li.ChatHeader__member test
+    =link_to "Edit", "#", class: "ChatHeader__editButton"
+
+
+  .MessageField
+    .MessageBox
+      .MessageInfo
+        .MessageInfo__userName
+          toru 
+        .MessageInfo__date
+          2020/12/13
+      .Message
+        %p.Message__content
+          test
+
+  .Footer
+    %form.Form
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input{name: "authenticity_token", type: "hidden", value: ""}/
+      .Form__contents
+        %input.Form__inputContent{name: "message[content]", placeholder: "type a message", type: "text"}/
+        %label.Form__inputImage{for: "message_image"}
+          = icon("fas", "images")
+          %input{type: "file", class: "Form__hidden"}/
+        %input.Form__submit{ name: "commit", type: "submit", value: "Send"}/
