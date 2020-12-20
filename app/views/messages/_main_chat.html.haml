@@ -2,23 +2,17 @@
   .ChatHeader
     .ChatHeader__group
       .ChatHeader__groupName
-        test group
+        = @group.name
         %ul.ChatHeader__memberList
           Member:
-          %li.ChatHeader__member test
-    =link_to "Edit", "#", class: "ChatHeader__editButton"
+          %li.ChatHeader__member
+            - @group.users.each do |user|
+              = user.name
+    = link_to "Edit", edit_group_path(@group), class: "ChatHeader__editButton"
 
 
   .MessageField
-    .MessageBox
-      .MessageInfo
-        .MessageInfo__userName
-          toru 
-        .MessageInfo__date
-          2020/12/13
-      .Message
-        %p.Message__content
-          test
+    = render @messages
 
   .Footer
     %form.Form
