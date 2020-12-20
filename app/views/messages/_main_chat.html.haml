@@ -15,12 +15,10 @@
     = render @messages
 
   .Footer
-    %form.Form
-      %input{name: "utf8", type: "hidden", value: "✓"}/
-      %input{name: "authenticity_token", type: "hidden", value: ""}/
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
-        %input.Form__inputContent{name: "message[content]", placeholder: "type a message", type: "text"}/
-        %label.Form__inputImage{for: "message_image"}
-          = icon("fas", "images")
-          %input{type: "file", class: "Form__hidden"}/
-        %input.Form__submit{ name: "commit", type: "submit", value: "Send"}/
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Form__Hidden'
+      = f.submit 'Send', class: 'Form__submit'

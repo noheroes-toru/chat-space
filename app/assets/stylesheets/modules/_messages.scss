@@ -79,17 +79,17 @@
   &__inputContent{
     border: none;
     height: 50px;
-    width: calc(100% - 100px);
+    width: 100%;
     padding: 0 45px 0 15px;
   }
   &__inputImage{
     height: 50px;
     position: absolute;
-    right: 130px;
+    right: 10px;
     top: 10px;
     font-size: 1.5rem;
   }
-  &__hidden{
+  &__Hidden{
     display: none;
   }
   &__submit{
